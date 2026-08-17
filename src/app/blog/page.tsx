@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Blog thiết kế website",
   description: "Các bài viết ngắn về chi phí website, landing page, Google Ads và chi phí duy trì website.",
   alternates: {
-    canonical: "/blog"
+    canonical: `${siteConfig.siteUrl}/blog`
   },
   openGraph: {
     title: "Blog thiết kế website | MT WEBSITE",

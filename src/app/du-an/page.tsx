@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Dự án website đã thực hiện",
   description: "Portfolio website freelance MT WEBSITE, bao gồm dự án thực tế và các dự án cá nhân/demo được gắn nhãn rõ ràng.",
   alternates: {
-    canonical: "/du-an"
+    canonical: `${siteConfig.siteUrl}/du-an`
   },
   openGraph: {
     title: "Dự án website đã thực hiện | MT WEBSITE",

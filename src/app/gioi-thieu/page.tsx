@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: "Giới thiệu Minh Trí",
   description: "Minh Trí - Freelance Web Developer, người trực tiếp tư vấn, thiết kế và phát triển website MT WEBSITE.",
   alternates: {
-    canonical: "/gioi-thieu"
+    canonical: `${siteConfig.siteUrl}/gioi-thieu`
   },
   openGraph: {
     title: "Giới thiệu Minh Trí | MT WEBSITE",

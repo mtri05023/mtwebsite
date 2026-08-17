@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Liên hệ báo giá website",
   description: "Liên hệ MT WEBSITE qua điện thoại, Zalo hoặc email để nhận tư vấn và báo giá thiết kế website.",
   alternates: {
-    canonical: "/lien-he"
+    canonical: `${siteConfig.siteUrl}/lien-he`
   },
   openGraph: {
     title: "Liên hệ báo giá website | MT WEBSITE",

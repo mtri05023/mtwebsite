@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "Thiết kế website cho doanh nghiệp nhỏ, hộ kinh doanh và cá nhân. Website responsive, SEO cơ bản, báo giá rõ ràng và hỗ trợ sau bàn giao.",
   metadataBase: new URL("https://www.mtwebsite.io.vn"),
   alternates: {
-    canonical: "/"
+    canonical: new URL("/", siteConfig.siteUrl)
   },
   openGraph: {
     title: "MT WEBSITE | Thiết kế Website Freelance",

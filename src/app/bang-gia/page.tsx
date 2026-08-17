@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Bảng giá thiết kế website",
   description: "Bảng giá tham khảo cho landing page, website cơ bản, website doanh nghiệp và website theo yêu cầu.",
   alternates: {
-    canonical: "/bang-gia"
+    canonical: `${siteConfig.siteUrl}/bang-gia`
   },
   openGraph: {
     title: "Bảng giá thiết kế website | MT WEBSITE",

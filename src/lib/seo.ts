@@ -3,11 +3,12 @@ import { siteConfig } from "@/data/site";
 
 export function pageMetadata(title: string, description: string, path: string): Metadata {
   const url = `${siteConfig.siteUrl}${path}`;
+  const canonical = path === "/" ? new URL("/", siteConfig.siteUrl) : url;
 
   return {
     title,
     description,
-    alternates: { canonical: path },
+    alternates: { canonical },
     openGraph: {
       title: `${title} | MT WEBSITE`,
       description,

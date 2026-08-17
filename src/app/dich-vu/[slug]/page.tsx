@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   return {
     title: service.metadata.title,
     description: service.metadata.description,
-    alternates: { canonical: `/dich-vu/${service.slug}` },
+    alternates: { canonical: `${siteConfig.siteUrl}/dich-vu/${service.slug}` },
     openGraph: {
       title: service.metadata.title,
       description: service.metadata.description,

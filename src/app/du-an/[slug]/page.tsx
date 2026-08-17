@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: ProjectDetailPageProps): Prom
     title: project.name,
     description: project.description,
     alternates: {
-      canonical: `/du-an/${project.slug}`
+      canonical: `${siteConfig.siteUrl}/du-an/${project.slug}`
     },
     openGraph: {
       title: `${project.name} | MT WEBSITE`,

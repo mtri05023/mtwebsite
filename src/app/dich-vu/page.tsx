@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Giải pháp website từ thiết kế, tối ưu hiệu quả đến hỗ trợ vận hành cho cá nhân, hộ kinh doanh và doanh nghiệp nhỏ.",
   alternates: {
-    canonical: "/dich-vu"
+    canonical: `${siteConfig.siteUrl}/dich-vu`
   },
   openGraph: {
     title: "Dịch vụ MT WEBSITE",
