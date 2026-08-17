@@ -28,6 +28,19 @@ a {
   text-decoration: none;
 }
 
+.page-transition {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 3.5s ease,
+    transform 3.5s ease;
+}
+
+.page-transition.is-entering {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 button,
 input,
 select,
@@ -1343,4 +1356,12 @@ textarea {
 
   .service-related-card { min-height: 0; padding: 20px; }
   .service-related-card p { min-height: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

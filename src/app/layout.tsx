@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { MobileContactBar } from "@/components/layout/MobileContactBar";
 import { FloatingContact } from "@/components/layout/FloatingContact";
+import { PageTransition } from "@/components/layout/PageTransition";
 import { contact, siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -52,7 +53,7 @@ export default function RootLayout({
     <html lang="vi">
       <body>
         <Header />
-        <main>{children}</main>
+        <PageTransition>{children}</PageTransition>
         <Footer />
         <FloatingContact phone={contact.phone} zalo={contact.zalo} />
         <MobileContactBar phone={contact.phone} zalo={contact.zalo} />

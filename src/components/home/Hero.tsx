@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 
-const HERO_AUTOPLAY_MS = 1500;
+const HERO_AUTOPLAY_MS = 3500;
 
 const trustPoints = ["Báo giá trước khi làm", "Responsive điện thoại", "Zalo & gọi điện", "Hỗ trợ sau bàn giao"];
 
@@ -98,9 +98,11 @@ export function Hero() {
 
   useEffect(() => {
     if (paused || prefersReducedMotion) return undefined;
-    const timer = window.setInterval(() => goTo(activeIndex + 1), HERO_AUTOPLAY_MS);
+    const timer = window.setInterval(() => {
+      setActiveIndex((currentIndex) => (currentIndex >= maxIndex ? 0 : currentIndex + 1));
+    }, HERO_AUTOPLAY_MS);
     return () => window.clearInterval(timer);
-  }, [activeIndex, goTo, paused, prefersReducedMotion]);
+  }, [maxIndex, paused, prefersReducedMotion]);
 
   function handlePointerDown(event: React.PointerEvent<HTMLElement>) {
     pointerStartX.current = event.clientX;
