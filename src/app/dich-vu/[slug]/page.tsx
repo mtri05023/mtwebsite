@@ -3,8 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/Button";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { contact, siteConfig } from "@/data/site";
 import { getRelatedServices, getServiceBySlug, serviceDetails } from "@/data/services";
+import { breadcrumbSchema } from "@/lib/seo";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -33,7 +35,13 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     openGraph: {
       title: service.metadata.title,
       description: service.metadata.description,
-      url: `${siteConfig.siteUrl}/dich-vu/${service.slug}`
+      url: `${siteConfig.siteUrl}/dich-vu/${service.slug}`,
+      type: "website"
+    },
+    twitter: {
+      card: "summary",
+      title: `${service.metadata.title}`,
+      description: service.metadata.description
     }
   };
 }
@@ -51,6 +59,39 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
   return (
     <>
+      <JsonLd
+        id="service-schema"
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: service.title,
+          url: `${siteConfig.siteUrl}/dich-vu/${service.slug}`,
+          description: service.description,
+          provider: { "@type": "ProfessionalService", name: siteConfig.brand, url: siteConfig.siteUrl },
+          areaServed: "Vietnam",
+          serviceType: service.title
+        }}
+      />
+      <JsonLd
+        id="service-breadcrumb-schema"
+        data={breadcrumbSchema([
+          { name: "Trang chủ", path: "/" },
+          { name: "Dịch vụ", path: "/dich-vu" },
+          { name: service.title, path: `/dich-vu/${service.slug}` }
+        ])}
+      />
+      <JsonLd
+        id="service-faq-schema"
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: service.faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer }
+          }))
+        }}
+      />
       <section className="service-hero">
         <div className="service-container service-hero-grid">
           <div className="service-hero-copy">
@@ -148,6 +189,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           </div>
           <div className="service-quote-actions">
             <Button href={formHref(service.formType)}>Nhận báo giá theo nhu cầu</Button>
+            <Link href="/bang-gia" className="service-quote-zalo">Xem bảng giá thiết kế website</Link>
             <Link className="service-quote-zalo" href={`https://zalo.me/${contact.zalo}`} target="_blank" rel="noopener noreferrer">Chat Zalo</Link>
           </div>
         </div>

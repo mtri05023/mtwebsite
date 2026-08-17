@@ -11,12 +11,13 @@ import { WhyChooseMe } from "@/components/home/WhyChooseMe";
 import { WorkProcess } from "@/components/home/WorkProcess";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { contact, services, siteConfig } from "@/data/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "MT WEBSITE | Thiết kế Website chuyên nghiệp",
-  description:
-    "Thiết kế website doanh nghiệp, website dịch vụ, landing page và website theo yêu cầu. Chi phí từ 1 triệu, responsive, báo giá rõ ràng và hỗ trợ sau bàn giao."
-};
+export const metadata: Metadata = pageMetadata(
+  "Thiết kế website chuyên nghiệp",
+  "Dịch vụ thiết kế website chuyên nghiệp cho doanh nghiệp, hộ kinh doanh và cá nhân. Responsive, SEO nền tảng, báo giá rõ ràng và hỗ trợ sau bàn giao.",
+  "/"
+);
 
 export default function HomePage() {
   return (
@@ -38,6 +39,17 @@ export default function HomePage() {
           },
           areaServed: "Vietnam",
           serviceType: services.map((service) => service.title)
+        }}
+      />
+      <JsonLd
+        id="homepage-website-schema"
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: siteConfig.brand,
+          url: siteConfig.siteUrl,
+          inLanguage: "vi-VN",
+          publisher: { "@type": "Person", name: siteConfig.owner }
         }}
       />
       <Hero />

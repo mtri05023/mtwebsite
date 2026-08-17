@@ -25,6 +25,16 @@ export const metadata: Metadata = {
     locale: "vi_VN",
     type: "website",
     url: siteConfig.siteUrl
+  },
+  twitter: {
+    card: "summary",
+    title: "MT WEBSITE | Thiết kế website chuyên nghiệp",
+    description:
+      "Thiết kế website cho doanh nghiệp nhỏ, hộ kinh doanh và cá nhân với báo giá rõ ràng, responsive và hỗ trợ sau bàn giao."
+  },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg"
   }
 };
 

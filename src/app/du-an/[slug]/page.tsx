@@ -6,10 +6,15 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { ProjectImageFrame } from "@/components/ui/ProjectImageFrame";
 import { ProjectPreview } from "@/components/ui/ProjectPreview";
 import { contact, portfolioProjects, siteConfig } from "@/data/site";
+import { breadcrumbSchema } from "@/lib/seo";
 
 type ProjectDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
+
+export function generateStaticParams() {
+  return portfolioProjects.map((project) => ({ slug: project.slug }));
+}
 
 export async function generateMetadata({ params }: ProjectDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
@@ -30,7 +35,13 @@ export async function generateMetadata({ params }: ProjectDetailPageProps): Prom
     openGraph: {
       title: `${project.name} | MT WEBSITE`,
       description: project.description,
-      url: `${siteConfig.siteUrl}/du-an/${project.slug}`
+      url: `${siteConfig.siteUrl}/du-an/${project.slug}`,
+      type: "article"
+    },
+    twitter: {
+      card: "summary",
+      title: `${project.name} | MT WEBSITE`,
+      description: project.description
     }
   };
 }
@@ -44,6 +55,13 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
   }
 
   const techs = project.technologies?.length ? project.technologies : project.technology ? project.technology.split(" / ") : [];
+  const relatedServiceHref = project.category.includes("bán hàng")
+    ? "/dich-vu/website-ban-hang"
+    : project.category.includes("Landing")
+      ? "/dich-vu/landing-page"
+      : project.category.includes("dịch vụ")
+        ? "/dich-vu/website-dich-vu"
+        : "/dich-vu/website-theo-yeu-cau";
 
   return (
     <>
@@ -61,6 +79,14 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
             jobTitle: siteConfig.role
           }
         }}
+      />
+      <JsonLd
+        id="project-breadcrumb-schema"
+        data={breadcrumbSchema([
+          { name: "Trang chủ", path: "/" },
+          { name: "Dự án", path: "/du-an" },
+          { name: project.name, path: `/du-an/${project.slug}` }
+        ])}
       />
       <section className="bg-navy-50 py-16 md:py-24">
         <div className="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
@@ -84,6 +110,9 @@ export default async function ProjectDetailPage({ params }: ProjectDetailPagePro
                 </Link>
               ) : null}
             </div>
+            <Link href={relatedServiceHref} className="mt-5 inline-flex font-bold text-accent-600 hover:text-accent-500">
+              Xem dịch vụ phù hợp với dự án này
+            </Link>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white p-3 shadow-soft">
             {project.images?.[0] ? (

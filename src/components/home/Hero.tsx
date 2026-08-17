@@ -132,7 +132,11 @@ export function Hero() {
               <div className="hero-copy min-w-0">
                 <p className="mb-4 text-sm font-bold uppercase tracking-wide text-accent-600">{slide.eyebrow}</p>
                 {slide.badge ? <div className="mb-5 inline-flex rounded-full border border-accent-200 bg-white px-4 py-2 text-sm font-bold text-navy-900 shadow-sm">{slide.badge}</div> : null}
-                <h1 className="max-w-3xl text-[1.9rem] font-black leading-tight text-navy-900 sm:text-4xl md:text-6xl">{slide.heading}</h1>
+                {index === 0 ? (
+                  <h1 className="max-w-3xl text-[1.9rem] font-black leading-tight text-navy-900 sm:text-4xl md:text-6xl">{slide.heading}</h1>
+                ) : (
+                  <h2 className="max-w-3xl text-[1.9rem] font-black leading-tight text-navy-900 sm:text-4xl md:text-6xl">{slide.heading}</h2>
+                )}
                 <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">{slide.description}</p>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Button href={slide.primaryCta.href}>{slide.primaryCta.label}</Button>

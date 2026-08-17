@@ -73,6 +73,7 @@ export type BlogPost = {
   description: string;
   date: string;
   slug: string;
+  content: string[];
 };
 
 export type EstimatorWebsiteType = {
@@ -493,25 +494,45 @@ export const blogPosts: BlogPost[] = [
     title: "Thiết kế website doanh nghiệp giá bao nhiêu?",
     description: "Các yếu tố ảnh hưởng đến chi phí làm website doanh nghiệp nhỏ: số trang, giao diện, nội dung và chức năng cần có.",
     date: "2026-08-16",
-    slug: "thiet-ke-website-doanh-nghiep-gia-bao-nhieu"
+    slug: "thiet-ke-website-doanh-nghiep-gia-bao-nhieu",
+    content: [
+      "Chi phí làm website doanh nghiệp thường phụ thuộc vào số lượng trang, mức độ tùy biến giao diện, nội dung cần chuẩn bị và các chức năng như form, bản đồ hoặc tích hợp riêng.",
+      "Một website giới thiệu cơ bản có thể bắt đầu với các trang Trang chủ, Giới thiệu, Dịch vụ và Liên hệ. Khi cần nhiều nhóm dịch vụ, blog, catalogue hoặc quy trình riêng, phạm vi thiết kế và kiểm thử sẽ tăng theo.",
+      "Trước khi nhận báo giá, nên xác định mục tiêu chính của website, nhóm khách hàng cần tiếp cận và những hành động muốn khách thực hiện như gọi điện, nhắn Zalo hoặc gửi form."
+    ]
   },
   {
     title: "Landing Page khác website thông thường như thế nào?",
     description: "Landing page tập trung vào một mục tiêu chuyển đổi, còn website thông thường trình bày nhiều nhóm thông tin hơn.",
     date: "2026-08-16",
-    slug: "landing-page-khac-website-thong-thuong-nhu-the-nao"
+    slug: "landing-page-khac-website-thong-thuong-nhu-the-nao",
+    content: [
+      "Landing page là một trang tập trung vào một mục tiêu, thường là giới thiệu một dịch vụ, sản phẩm hoặc chiến dịch quảng cáo. Nội dung được sắp xếp để người xem nhanh chóng hiểu lợi ích và thực hiện một CTA rõ ràng.",
+      "Website thông thường có nhiều trang và nhiều nhóm thông tin hơn, phù hợp khi doanh nghiệp cần giới thiệu thương hiệu, năng lực, nhiều dịch vụ hoặc nội dung chuyên môn lâu dài.",
+      "Lựa chọn giữa hai loại nên dựa trên mục tiêu và ngân sách. Landing page phù hợp để bắt đầu một chiến dịch cụ thể; website nhiều trang phù hợp để xây dựng nền tảng hiện diện lâu dài."
+    ]
   },
   {
     title: "Website chạy Google Ads cần chuẩn bị những gì?",
     description: "Trước khi chạy quảng cáo, website cần thông tin rõ, CTA dễ thao tác, tốc độ ổn và tracking chuyển đổi cơ bản.",
     date: "2026-08-16",
-    slug: "website-chay-google-ads-can-chuan-bi-nhung-gi"
+    slug: "website-chay-google-ads-can-chuan-bi-nhung-gi",
+    content: [
+      "Trước khi chạy Google Ads, website cần mô tả rõ dịch vụ, khu vực phục vụ, cách liên hệ và thông tin tạo niềm tin. Người dùng nên tìm thấy câu trả lời cho nhu cầu của họ ngay sau khi truy cập từ quảng cáo.",
+      "CTA gọi điện, Zalo hoặc form cần dễ nhìn và thao tác tốt trên điện thoại. Hãy kiểm tra cả nội dung sau khi gửi form để khách biết yêu cầu đã được tiếp nhận hay chưa.",
+      "Nên cài tracking cơ bản cho các hành động quan trọng như click gọi, click Zalo và gửi form để đánh giá chất lượng chuyển đổi thay vì chỉ nhìn số lượt click."
+    ]
   },
   {
     title: "Chi phí duy trì website mỗi năm gồm những gì?",
     description: "Những khoản thường gặp gồm domain, hosting, bảo trì kỹ thuật, cập nhật nội dung và các công cụ theo nhu cầu.",
     date: "2026-08-16",
-    slug: "chi-phi-duy-tri-website-moi-nam-gom-nhung-gi"
+    slug: "chi-phi-duy-tri-website-moi-nam-gom-nhung-gi",
+    content: [
+      "Chi phí duy trì website thường gồm domain, hosting và những công việc phát sinh theo nhu cầu như cập nhật nội dung, kiểm tra form, sửa lỗi hoặc sao lưu dữ liệu.",
+      "Domain và hosting có chu kỳ gia hạn khác nhau. Ngoài phí gia hạn, nên dự trù thời gian kiểm tra website sau các lần cập nhật để phát hiện sớm lỗi hiển thị hoặc liên kết.",
+      "Nếu không có người phụ trách kỹ thuật, gói bảo trì theo phạm vi rõ ràng có thể giúp việc cập nhật và xử lý lỗi dễ dự đoán hơn."
+    ]
   }
 ];
 
