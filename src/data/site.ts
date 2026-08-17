@@ -90,7 +90,7 @@ export const siteConfig = {
   brand: "MT WEBSITE",
   role: "Thiết kế Website & Phát triển Web",
   owner: "Minh Trí",
-  siteUrl: "https://mtwebsite.vn",
+  siteUrl: "https://www.mtwebsite.io.vn",
   description:
     "Thiết kế website freelance cho doanh nghiệp nhỏ, hộ kinh doanh và cá nhân. Website responsive, SEO cơ bản, báo giá rõ ràng và hỗ trợ sau bàn giao."
 };

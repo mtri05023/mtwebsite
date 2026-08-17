@@ -227,7 +227,7 @@ function MockupVisual() {
             <span className="h-3 w-3 rounded-full bg-red-300" />
             <span className="h-3 w-3 rounded-full bg-amber-300" />
             <span className="h-3 w-3 rounded-full bg-emerald-300" />
-            <span className="ml-3 h-7 flex-1 rounded-full bg-white px-4 text-xs font-bold leading-7 text-slate-400">mtwebsite.vn</span>
+            <span className="ml-3 h-7 flex-1 rounded-full bg-white px-4 text-xs font-bold leading-7 text-slate-400">www.mtwebsite.io.vn</span>
           </div>
           <div className="grid gap-5 p-5">
             <div className="rounded-2xl bg-navy-900 p-6 text-white">
