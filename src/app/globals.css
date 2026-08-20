@@ -312,6 +312,13 @@ textarea {
 
 .project-image-frame-gallery {
   min-height: 0;
+  aspect-ratio: 16 / 10;
+  background: #f8fafc;
+}
+
+.project-image-frame-contain img {
+  object-fit: contain;
+  padding: 10px;
 }
 
 .project-preview {

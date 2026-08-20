@@ -17,6 +17,7 @@ export type Service = {
 export type Project = {
   slug: string;
   name: string;
+  subtitle?: string;
   website?: string;
   url?: string;
   category: string;
@@ -26,13 +27,29 @@ export type Project = {
   technology: string;
   technologies?: string[];
   description: string;
+  cardDescription?: string;
+  seoDescription?: string;
   scope: string[];
   features?: string[];
   images?: string[];
+  gallery?: ProjectGalleryImage[];
+  solutions?: ProjectSolution[];
   accent: string;
   preview?: "service" | "cinema" | "bookstore" | "business" | "medical" | "real-estate" | "education" | "portfolio";
   featured?: boolean;
   isDemo?: boolean;
+};
+
+export type ProjectGalleryImage = {
+  src: string;
+  alt: string;
+  title: string;
+  description: string;
+};
+
+export type ProjectSolution = {
+  title: string;
+  description: string;
 };
 
 export type WebsiteStyleSample = {
@@ -275,16 +292,39 @@ export const portfolioProjects: Project[] = [
   {
     slug: "cinemax",
     name: "Cinemax",
+    subtitle: "Website đặt vé & quản lý rạp chiếu phim",
     category: "Web App",
     type: "Dự án cá nhân / Demo",
     status: "Dự án cá nhân",
     industry: "Rạp chiếu phim",
-    technology: "",
-    technologies: [],
-    description: "Website đặt vé và quản lý rạp chiếu phim gồm giao diện người dùng và trang quản trị.",
-    scope: ["Danh sách phim", "Lịch chiếu", "Rạp chiếu", "Đặt vé", "Quản lý phim", "Quản lý lịch chiếu", "Dashboard", "Quản lý đơn đặt vé"],
-    features: ["Danh sách phim", "Lịch chiếu", "Rạp chiếu", "Đặt vé", "Dashboard", "Quản lý đơn đặt vé"],
-    images: ["/images/projects/cinemax-home.png", "/images/projects/cinemax-movies.png", "/images/projects/cinemax-admin-dashboard.png", "/images/projects/cinemax-admin-movies.png"],
+    technology: "PHP / HTML / CSS / XAMPP",
+    technologies: ["PHP", "HTML", "CSS", "XAMPP"],
+    description: "Giải pháp website đặt vé rạp chiếu phim kết hợp giao diện khách hàng và hệ thống quản trị. Khách hàng có thể khám phá phim, xem thông tin và lịch chiếu, trong khi quản trị viên quản lý phim, rạp, phòng chiếu, đơn đặt vé và chương trình khuyến mãi trên cùng một hệ thống.",
+    cardDescription: "Website đặt vé rạp chiếu phim với giao diện khách hàng, lịch chiếu, quản lý phim, đơn vé và dashboard quản trị.",
+    seoDescription: "Cinemax là demo website đặt vé và quản lý rạp chiếu phim với trang phim, lịch chiếu, dashboard, quản lý phim, rạp, đơn đặt vé và khuyến mãi.",
+    scope: ["Website xem phim và lịch chiếu trực quan", "Trang chi tiết phim và trailer", "Quản lý phim và thể loại", "Quản lý cụm rạp và phòng chiếu", "Quản lý loại ghế và giá vé", "Quản lý lịch chiếu", "Theo dõi đơn đặt vé và thanh toán", "Quản lý chương trình khuyến mãi", "Dashboard tổng quan hoạt động"],
+    features: ["Website xem phim và lịch chiếu trực quan", "Trang chi tiết phim và trailer", "Quản lý phim và thể loại", "Quản lý cụm rạp và phòng chiếu", "Quản lý loại ghế và giá vé", "Quản lý lịch chiếu", "Theo dõi đơn đặt vé và thanh toán", "Quản lý chương trình khuyến mãi", "Dashboard tổng quan hoạt động"],
+    images: ["/images/projects/cinemax-project-showcase/docs/project-showcase/09-home-hero-1.png"],
+    gallery: [
+      { src: "/images/projects/cinemax-project-showcase/docs/project-showcase/09-home-hero-1.png", alt: "Trang chủ đặt vé Cinemax", title: "Trang chủ đặt vé", description: "Giao diện người dùng giúp khách khám phá phim nổi bật và truy cập nhanh vào lịch chiếu." },
+      { src: "/images/projects/cinemax-project-showcase/docs/project-showcase/10-home-movies.png", alt: "Danh sách phim đang chiếu Cinemax", title: "Danh sách phim", description: "Các phim đang chiếu được trình bày trực quan để khách dễ chọn nội dung phù hợp." },
+      { src: "/images/projects/cinemax-project-showcase/docs/project-showcase/12-movie-detail.png", alt: "Trang chi tiết phim Cinemax", title: "Chi tiết phim", description: "Thông tin phim, thể loại, thời lượng, nội dung và trailer được trình bày rõ ràng trước khi khách đặt vé." },
+      { src: "/images/projects/cinemax-project-showcase/docs/project-showcase/07-dashboard.png", alt: "Giao diện dashboard quản trị Cinemax", title: "Dashboard quản trị", description: "Tổng hợp hoạt động vận hành như doanh thu demo, vé bán, phim đang chiếu và đơn hàng mới trên một màn hình." },
+      { src: "/images/projects/cinemax-project-showcase/docs/project-showcase/06-movies-admin.png", alt: "Trang quản lý phim Cinemax", title: "Quản lý phim", description: "Quản trị danh sách phim, poster, thể loại, thời lượng và trạng thái để cập nhật nội dung nhanh hơn." },
+      { src: "/images/projects/cinemax-project-showcase/docs/project-showcase/05-cinemas.png", alt: "Trang quản lý rạp Cinemax", title: "Quản lý rạp", description: "Quản lý nhiều cụm rạp và phòng chiếu trên cùng hệ thống, phù hợp cho mô hình có nhiều địa điểm." },
+      { src: "/images/projects/cinemax-project-showcase/docs/project-showcase/03-schedule.png", alt: "Trang quản lý lịch chiếu Cinemax", title: "Lịch chiếu", description: "Theo dõi và tổ chức lịch chiếu theo rạp, phòng và khung giờ để giảm thao tác vận hành thủ công." },
+      { src: "/images/projects/cinemax-project-showcase/docs/project-showcase/02-orders.png", alt: "Trang quản lý đơn đặt vé Cinemax", title: "Đơn đặt vé", description: "Theo dõi đơn hàng và trạng thái thanh toán để đội vận hành nắm được giao dịch phát sinh." },
+      { src: "/images/projects/cinemax-project-showcase/docs/project-showcase/01-promotions.png", alt: "Trang quản lý khuyến mãi Cinemax", title: "Khuyến mãi", description: "Quản lý mã giảm giá và thời gian áp dụng cho các chương trình bán vé theo từng giai đoạn." },
+      { src: "/images/projects/cinemax-project-showcase/docs/project-showcase/04-seat-pricing.png", alt: "Trang quản lý loại ghế và giá vé Cinemax", title: "Loại ghế & giá vé", description: "Thiết lập loại ghế và giá vé để hệ thống linh hoạt với từng phòng chiếu hoặc chính sách bán hàng." },
+      { src: "/images/projects/cinemax-project-showcase/docs/project-showcase/08-genres.png", alt: "Trang quản lý thể loại phim Cinemax", title: "Thể loại phim", description: "Tổ chức thể loại phim có cấu trúc để khách lọc nội dung và quản trị viên cập nhật catalogue dễ hơn." },
+      { src: "/images/projects/cinemax-project-showcase/docs/project-showcase/11-home-hero-2.png", alt: "Giao diện hero khác của Cinemax", title: "Hero phim nổi bật", description: "Không gian giới thiệu phim nổi bật giúp website tạo điểm nhấn ngay khi khách truy cập." }
+    ],
+    solutions: [
+      { title: "Giao diện khách hàng", description: "Luồng khám phá phim, xem chi tiết và truy cập lịch chiếu được tổ chức rõ để khách ra quyết định nhanh." },
+      { title: "Hệ thống quản trị rạp", description: "Các nghiệp vụ phim, rạp, phòng chiếu, lịch chiếu, đơn vé và khuyến mãi được gom trong dashboard quản trị." },
+      { title: "Quản lý vận hành", description: "Dữ liệu phim, lịch chiếu, giá vé và đơn đặt vé được phân nhóm theo nghiệp vụ để giảm sai sót khi cập nhật." },
+      { title: "Responsive", description: "Giao diện portfolio hiển thị rõ trên desktop, tablet và điện thoại để khách xem được nhiều màn hình demo." }
+    ],
     accent: "#7c3aed",
     preview: "cinema",
     featured: true,
@@ -292,18 +332,93 @@ export const portfolioProjects: Project[] = [
   },
   {
     slug: "bookstore",
-    name: "Bookstore",
+    name: "Online Bookstore Management System",
+    subtitle: "Website bán sách & quản lý nhà sách",
     category: "Website bán hàng",
     type: "Dự án cá nhân / Demo",
     status: "Dự án cá nhân",
     industry: "Bán sách",
-    technology: "",
-    technologies: [],
-    description: "Website bán sách có sản phẩm, giỏ hàng, đặt hàng và giao diện quản lý.",
-    scope: ["Danh sách sách", "Chi tiết sách", "Tìm kiếm", "Giỏ hàng", "Đặt hàng", "Quản lý sản phẩm"],
-    features: ["Danh sách sách", "Chi tiết sách", "Tìm kiếm", "Giỏ hàng", "Đặt hàng", "Quản lý sản phẩm"],
-    images: ["/images/projects/bookstore.png"],
+    technology: "PHP / MySQL/MariaDB / HTML / CSS / JavaScript / PDO",
+    technologies: ["PHP", "MySQL/MariaDB", "HTML", "CSS", "JavaScript", "PDO"],
+    description: "Website thương mại điện tử dành cho nhà sách, hỗ trợ khách hàng tìm kiếm, xem và đặt mua sách trực tuyến. Hệ thống đồng thời cung cấp khu vực quản trị để quản lý sản phẩm, tồn kho, đơn hàng, chi nhánh và hoạt động bán hàng tại quầy.",
+    cardDescription: "Website bán sách với catalogue, giỏ hàng, đặt hàng và quản trị nhà sách.",
+    seoDescription: "Online Bookstore Management System là website bán sách và quản lý nhà sách với catalogue, tìm kiếm, giỏ hàng, đơn hàng, tồn kho chi nhánh, POS và chat hỗ trợ.",
+    scope: ["Danh mục sách trực tuyến", "Tìm kiếm và lọc sách", "Chi tiết sản phẩm", "Giỏ hàng và đặt hàng", "Quản lý đơn hàng", "Quản lý tồn kho theo chi nhánh", "Bán hàng tại quầy", "Quản lý khuyến mãi", "Dashboard và báo cáo", "Chat hỗ trợ khách hàng"],
+    features: ["Danh mục sách trực tuyến", "Tìm kiếm và lọc sách", "Chi tiết sản phẩm", "Giỏ hàng và đặt hàng", "Quản lý đơn hàng", "Quản lý tồn kho theo chi nhánh", "Bán hàng tại quầy", "Quản lý khuyến mãi", "Dashboard và báo cáo", "Chat hỗ trợ khách hàng"],
+    images: ["/images/projects/bookstore-project-showcase/docs/bookstore-project-showcase/02-store-catalog.png"],
+    gallery: [
+      { src: "/images/projects/bookstore-project-showcase/docs/bookstore-project-showcase/02-store-catalog.png", alt: "Website bán sách Bookstore", title: "Danh mục sách trực tuyến", description: "Khách hàng có thể xem danh sách sách, tìm kiếm và lọc theo danh mục để nhanh chóng tìm đúng sản phẩm." },
+      { src: "/images/projects/bookstore-project-showcase/docs/bookstore-project-showcase/03-store-products.png", alt: "Card sản phẩm và giỏ hàng Bookstore", title: "Card sản phẩm", description: "Thông tin giá, tồn kho và nút thêm vào giỏ được đặt ngay trên card để rút ngắn thao tác mua hàng." },
+      { src: "/images/projects/bookstore-project-showcase/docs/bookstore-project-showcase/01-admin-pos.png", alt: "Màn hình bán hàng tại quầy Bookstore", title: "Bán hàng tại quầy", description: "Khu vực quản trị hỗ trợ tìm sách, kiểm tra tồn kho theo chi nhánh và tạo đơn cho giao dịch trực tiếp." }
+    ],
+    solutions: [
+      { title: "Giao diện mua sách", description: "Catalogue, bộ lọc và card sản phẩm giúp khách hàng tìm sách và đưa vào giỏ hàng thuận tiện." },
+      { title: "Quản trị nhà sách", description: "Đơn hàng, sản phẩm, chi nhánh, khuyến mãi và khách hàng được quản lý tập trung trong hệ thống." },
+      { title: "Tồn kho & bán tại quầy", description: "Tồn kho được theo dõi theo chi nhánh, đồng thời hỗ trợ luồng bán hàng tại quầy cho cửa hàng vật lý." },
+      { title: "Nền tảng kỹ thuật rõ ràng", description: "PHP, PDO và MySQL/MariaDB được dùng để tổ chức dữ liệu đơn hàng, sản phẩm và tồn kho có cấu trúc." }
+    ],
     accent: "#b45309",
+    preview: "bookstore",
+    featured: true,
+    isDemo: true
+  },
+  {
+    slug: "website-quan-ly-nha-tro",
+    name: "Website Quản Lý Nhà Trọ",
+    subtitle: "Website tìm phòng & hệ thống quản lý cho thuê",
+    category: "Web App",
+    type: "Dự án cá nhân / Demo",
+    status: "Dự án cá nhân",
+    industry: "Quản lý nhà trọ và cho thuê phòng",
+    technology: "Next.js / TypeScript / Tailwind CSS / Prisma ORM / MySQL",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma ORM", "MySQL", "ExcelJS"],
+    description: "Giải pháp quản lý nhà trọ kết hợp website tìm phòng dành cho khách thuê và hệ thống quản trị dành cho chủ nhà. Toàn bộ phòng, khách thuê, hợp đồng, khoản thu và doanh thu được quản lý tập trung.",
+    cardDescription: "Website tìm phòng kết hợp dashboard quản lý phòng, khách thuê, hợp đồng và khoản thu.",
+    seoDescription: "Website Quản Lý Nhà Trọ là demo hệ thống tìm phòng và quản trị nhà trọ với quản lý phòng, khách thuê, hợp đồng, tiền thuê, doanh thu và xuất Excel.",
+    scope: ["Danh sách nhà trọ và phòng", "Bộ lọc khu vực, giá, sức chứa và trạng thái", "Chi tiết phòng và tiện ích", "Gửi yêu cầu xem phòng", "Dashboard quản trị", "Quản lý phòng và hình ảnh", "Quản lý khách thuê", "Quản lý hợp đồng", "Theo dõi tiền thuê hàng tháng", "Báo cáo doanh thu", "Xuất Excel"],
+    features: ["Danh sách nhà trọ và phòng", "Bộ lọc khu vực, giá, sức chứa và trạng thái", "Chi tiết phòng và tiện ích", "Gửi yêu cầu xem phòng", "Dashboard quản trị", "Quản lý phòng và hình ảnh", "Quản lý khách thuê", "Quản lý hợp đồng", "Theo dõi tiền thuê hàng tháng", "Báo cáo doanh thu", "Xuất Excel"],
+    images: ["/images/projects/rental-room-project-showcase/docs/rental-room-project-showcase/02-rental-room-demo-light.png"],
+    gallery: [
+      { src: "/images/projects/rental-room-project-showcase/docs/rental-room-project-showcase/02-rental-room-demo-light.png", alt: "Dashboard quản lý nhà trọ bản sáng", title: "Tổng quan giao diện sáng", description: "Ảnh tổng hợp thể hiện website tìm phòng, dashboard quản trị, danh sách phòng, chi tiết phòng và giao diện mobile." },
+      { src: "/images/projects/rental-room-project-showcase/docs/rental-room-project-showcase/01-rental-room-demo-dark.png", alt: "Dashboard quản lý nhà trọ bản tối", title: "Tổng quan giao diện tối", description: "Bản demo giao diện tối cho thấy phạm vi quản lý public và admin trong một hệ thống quản lý nhà trọ." }
+    ],
+    solutions: [
+      { title: "Website tìm phòng", description: "Khách thuê có thể xem danh sách phòng, lọc theo nhu cầu và gửi yêu cầu xem phòng ngay trên website." },
+      { title: "Quản trị cho chủ nhà", description: "Phòng, hình ảnh, tiện ích, khách thuê, hợp đồng và khoản thu được quản lý tập trung trong dashboard." },
+      { title: "Theo dõi doanh thu", description: "Khoản thu tiền trọ theo tháng và báo cáo doanh thu được tổ chức để chủ nhà dễ kiểm tra tình hình vận hành." },
+      { title: "Responsive", description: "Các màn hình public và quản trị được trình bày rõ trên desktop, tablet và điện thoại." }
+    ],
+    accent: "#0f766e",
+    preview: "real-estate",
+    featured: true,
+    isDemo: true
+  },
+  {
+    slug: "fashion-store",
+    name: "Fashion Store",
+    subtitle: "Website bán hàng thời trang / E-commerce",
+    category: "Website bán hàng",
+    type: "Dự án cá nhân / Demo",
+    status: "Dự án demo",
+    industry: "Thời trang",
+    technology: "Next.js App Router / TypeScript / Tailwind CSS / Prisma ORM / MySQL",
+    technologies: ["Next.js App Router", "TypeScript", "Tailwind CSS", "Prisma ORM", "MySQL"],
+    description: "Demo website bán hàng thời trang với trải nghiệm mua sắm hiện đại từ khám phá sản phẩm, lọc theo nhu cầu, xem chi tiết đến giỏ hàng. Khu vực quản trị hỗ trợ theo dõi sản phẩm, đơn hàng, khách hàng và hoạt động bán hàng.",
+    cardDescription: "Demo e-commerce thời trang với storefront, bộ lọc, giỏ hàng và dashboard quản trị.",
+    seoDescription: "Fashion Store là demo website bán hàng thời trang với homepage, danh mục sản phẩm, bộ lọc, chi tiết sản phẩm, giỏ hàng và dashboard quản trị.",
+    scope: ["Homepage bán hàng hiện đại", "Danh mục sản phẩm", "Filter sản phẩm", "Chi tiết sản phẩm", "Chọn màu và kích thước", "Giỏ hàng", "Dashboard quản trị", "Quản lý sản phẩm", "Quản lý đơn hàng", "Quản lý khách hàng", "Báo cáo bán hàng"],
+    features: ["Homepage bán hàng hiện đại", "Danh mục sản phẩm", "Filter sản phẩm", "Chi tiết sản phẩm", "Chọn màu và kích thước", "Giỏ hàng", "Dashboard quản trị", "Quản lý sản phẩm", "Quản lý đơn hàng", "Quản lý khách hàng", "Báo cáo bán hàng"],
+    images: ["/images/projects/fashion-store-project-showcase/docs/fashion-store-project-showcase/01-fashion-store-full-demo.png"],
+    gallery: [
+      { src: "/images/projects/fashion-store-project-showcase/docs/fashion-store-project-showcase/01-fashion-store-full-demo.png", alt: "Giao diện Fashion Store", title: "Showcase tổng hợp", description: "Ảnh demo thể hiện storefront, danh mục sản phẩm, chi tiết sản phẩm, giỏ hàng và dashboard quản trị bán hàng trong cùng một trải nghiệm." }
+    ],
+    solutions: [
+      { title: "Storefront bán hàng", description: "Homepage, danh mục, bộ lọc và trang chi tiết giúp khách khám phá sản phẩm thời trang theo nhu cầu." },
+      { title: "Luồng giỏ hàng", description: "Màu sắc, kích thước, số lượng và tổng đơn được trình bày rõ để mô phỏng trải nghiệm mua sắm hoàn chỉnh." },
+      { title: "Dashboard quản trị", description: "Sản phẩm, đơn hàng, khách hàng và báo cáo được minh họa trong khu vực admin dành cho vận hành bán hàng." },
+      { title: "Demo responsive", description: "Project được trình bày như demo giao diện, không mô tả các số liệu trong screenshot là kết quả kinh doanh thật." }
+    ],
+    accent: "#db2777",
     preview: "bookstore",
     featured: true,
     isDemo: true

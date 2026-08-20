@@ -23,7 +23,7 @@ type HeroSlide = {
     label: string;
     href: string;
   };
-  visual: "mockup" | "healthcare" | "bookstore" | "collage";
+  visual: "mockup" | "healthcare" | "fashion-store" | "collage";
 };
 
 const slides: HeroSlide[] = [
@@ -60,9 +60,9 @@ const slides: HeroSlide[] = [
       </>
     ),
     description: "Website bán hàng với danh mục sản phẩm, tìm kiếm, giỏ hàng, đặt hàng và giao diện quản lý thuận tiện.",
-    primaryCta: { label: "Xem website bán hàng", href: "/du-an/bookstore" },
+    primaryCta: { label: "Xem website bán hàng", href: "/du-an/fashion-store" },
     secondaryCta: { label: "Tư vấn miễn phí", href: "/lien-he" },
-    visual: "bookstore"
+    visual: "fashion-store"
   },
   {
     eyebrow: "DỰ ÁN ĐÃ THỰC HIỆN",
@@ -205,8 +205,8 @@ function HeroVisual({ visual, priority }: { visual: HeroSlide["visual"]; priorit
     );
   }
 
-  const image = visual === "healthcare" ? "/assets/references/healthcare-demo.png" : "/assets/references/bookstore.png";
-  const alt = visual === "healthcare" ? "Mẫu website doanh nghiệp y tế" : "Website bán hàng Bookstore";
+  const image = visual === "healthcare" ? "/assets/references/healthcare-demo.png" : "/images/projects/fashion-store-project-showcase/docs/fashion-store-project-showcase/01-fashion-store-full-demo.png";
+  const alt = visual === "healthcare" ? "Mẫu website doanh nghiệp y tế" : "Giao diện website bán hàng Fashion Store";
 
   return (
     <div className="hero-visual hero-image-card">

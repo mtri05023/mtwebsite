@@ -149,7 +149,7 @@ export const serviceDetails: ServiceDetail[] = [
     description: "Website trình bày sản phẩm, danh mục, giỏ hàng, đặt hàng và quản lý sản phẩm tùy nhu cầu.",
     heroDescription: "MT WEBSITE xây dựng website bán hàng phù hợp cho shop nhỏ, hộ kinh doanh hoặc demo hệ thống bán hàng có quản lý sản phẩm.",
     icon: "shop",
-    image: "/images/projects/bookstore.png",
+    image: "/images/projects/bookstore-project-showcase/docs/bookstore-project-showcase/02-store-catalog.png",
     whatIs: [
       "Website bán hàng giúp khách xem sản phẩm, đọc thông tin chi tiết, tìm kiếm, thêm giỏ hàng và gửi đơn đặt hàng.",
       "Với nhu cầu đơn giản, website có thể tập trung trưng bày sản phẩm và nhận liên hệ. Với nhu cầu cao hơn, có thể phát triển thêm quản lý đơn và sản phẩm.",
